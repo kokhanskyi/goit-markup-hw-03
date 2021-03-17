@@ -18,8 +18,29 @@
   --logo-header-color: #000000;
   --logo-footer-color: #ffffff;
   --communication-footer-color: rgb(255, 255, 255, 0.6);
+  --color-text-btn: #ffffff;
 }
 
+/* Сброс стилей для h1-h6, p */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+/* Убираем маркеры из списков */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+}
 body {
   /* Подгружаем шрифты */
   font-family: 'Roboto', sans-serif;
@@ -30,10 +51,26 @@ body {
   /* Основной цвет фона #e5e5e5 */
   background-color: var(--primary-background-color);
 }
-/* Убираем маркеры из списков */
-ul {
-  list-style: none;
+
+/* ===Класс КОНТЕЙНЕР */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
+
+.page-header,
+.page-header nav,
+.site-nav,
+.communication-header {
+  display: flex;
+}
+
+.page-header {
+  justify-content: space-between;
+  align-items: center;
+}
+/* =======================ШАПКА САЙТА========================= */
 /* Шапка сайта */
 .page-header {
   background-color: var(--header-background-color);
@@ -42,6 +79,7 @@ ul {
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
+
 /* Логотип в шапке */
 
 .logo-header {
@@ -71,6 +109,7 @@ ul {
   color: var(--accent-color);
 }
 /* Коммуникация (шапка) */
+
 .communication-header .link {
   text-decoration: none;
   color: currentColor;
@@ -79,9 +118,13 @@ ul {
 .communication-header .link:focus {
   color: var(--accent-color); /* Синий цвет #2196F3 */
 }
-
+/* ================================================ */
+/* ================ОСНОВНАЯ СТРАНИЦА================================ */
 /* Основная секця */
-.primary {
+.hero {
+  background-color: var(--primary-section-background-color);
+}
+.hero-title {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -89,36 +132,47 @@ ul {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--primary-section-text-color);
-  background-color: var(--primary-section-background-color);
+  max-width: 700px;
+  margin: 0 auto;
+  margin-bottom: 30px;
 }
 /* Свойство Кнопки (button)смотри в разделе "Кнопкм" */
 
-/* Общее для секций */
+/* Общее для секций (шрифты h2 h3) */
 .section-title {
   color: var(--title-text-color); /* Вторичный цвет текста #212121 */
 }
 .section-list {
   color: var(--title-text-color); /* Вторичный цвет текста #212121 */
 }
-/* Особенности */
+/* Секция  Особенности */
 .feature .section-list {
   font-weight: bold;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
 }
+/* .feature  */
+.container > ul {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+}
 .feature p {
   font-size: 14px;
   line-height: 1.71;
 }
-/* Чем мы занимаемся */
+/* Секция  Чем мы занимаемся */
 .business h2 {
   font-weight: bold;
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
 }
-/* Наша команда */
+/* Секция  Наша команда */
 .command {
   background-color: var(--second-background-color);
 }
@@ -139,16 +193,17 @@ ul {
   line-height: 1.19;
   text-align: center;
 }
-
-/* Секция Портфолио */
-/* Фильтр проектов */
+/* ================================================ */
+/* ===================ПОРТФОЛИО============================= */
+/* Страница Портфолио */
+/* Секция  Фильтр проектов */
 .filters {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   text-align: center;
 }
-/* Список проектов */
+/* Секция  Список проектов */
 .project h3 {
   font-weight: bold;
   font-size: 18px;
@@ -160,21 +215,23 @@ ul {
   line-height: 1.87;
 }
 
+/* ================================================ */
+
+/* ====================КНОПКИ САЙТА============================ */
 /* Кнопки */
 .button {
   font-family: inherit;
   cursor: pointer;
 }
-.primary > .button {
+.hero-btn {
   font-weight: bold;
   font-size: 16px;
   line-height: 1.87;
-  display: flex;
-  align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
-  color: currentColor;
+  color: var(--color-text-btn);
   background-color: var(--accent-color);
+  margin: 0 auto;
 }
 .primary > .button:hover,
 .primary > .button:focus {
@@ -190,6 +247,9 @@ ul {
   color: var(--primary-section-text-color);
   background-color: var(--accent-color);
 }
+/* ================================================ */
+/* ===================ПОДВАЛ САЙТА============================= */
+
 /* Подвал сайта */
 footer {
   color: var(--logo-footer-color);
@@ -224,3 +284,4 @@ footer {
 .communication-footer .link:focus {
   color: var(--accent-color); /* Синий цвет #2196F3 */
 }
+/* ================================================ */
