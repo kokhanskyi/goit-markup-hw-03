@@ -13,12 +13,12 @@
   --title-text-color: #212121;
   --accent-color: #2196f3;
   --primary-background-color: #ffffff;
-  /* --header-background-color: #ffffff; */
   --second-background-color: #f5f4fa;
   --logo-header-color: #000000;
   --logo-footer-color: #ffffff;
   --communication-footer-color: rgb(255, 255, 255, 0.6);
   --color-text-btn: #ffffff;
+  --btn-hover-color: #188ce8;
 }
 
 /* Сброс стилей для h1-h6, p */
@@ -78,14 +78,12 @@ body {
   display: flex;
   align-items: center;
 }
-
 .page-header {
   justify-content: space-between;
   align-items: center;
-  margin: 24px auto;
+  padding: 25px 0;
 }
-.site-nav {
-}
+
 /* Задаем стиль для h2 */
 .container h2 {
   font-weight: bold;
@@ -112,12 +110,26 @@ body {
 /* Логотип в шапке */
 
 .logo-header {
+  display: inline-block;
   font-family: 'Raleway', sans-serif;
   font-size: 26px;
   line-height: 1.19;
   letter-spacing: 0.03em;
   color: var(--logo-header-color); /* Черный цвет логотипа #000000 */
   text-decoration: none;
+  margin-right: 93px;
+}
+.site-nav .link {
+  display: inline-block;
+  margin-right: 50px;
+}
+.communication-header .link {
+  display: inline-block;
+  margin-left: 50px;
+}
+
+.header {
+  border-bottom: 1px solid #ececec;
 }
 .logo-header > span {
   color: var(--accent-color);
@@ -196,7 +208,13 @@ body {
   font-size: 14px;
   line-height: 1.71;
   padding-top: 10px;
+  font-family: Roboto;
 }
+.feature h3 {
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
 /* Секция  Чем мы занимаемся */
 .container .business-list {
   display: flex;
@@ -215,14 +233,15 @@ body {
 .command {
   background-color: var(--second-background-color);
 }
-/* .command img {
-  margin-bottom: 30px;
-} */
-
 .container .command-list {
   display: flex;
   margin-left: -30px;
   margin-top: -30px;
+}
+
+.command-wapper {
+  display: block;
+  padding-top: 30px;
   border-bottom: 2px solid #a5a5a9;
   border-radius: 5px;
 }
@@ -251,6 +270,10 @@ body {
 /* ================================================ */
 /* ===================ПОРТФОЛИО============================= */
 /* Страница Портфолио */
+.portfoleo {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 /* Секция  Фильтр проектов */
 .filters {
   font-weight: 500;
@@ -258,16 +281,47 @@ body {
   line-height: 1.62;
   text-align: center;
 }
+.portfoleo-filters-list {
+  display: flex;
+  justify-content: center;
+}
+
+.portfoleo-filters-list-item {
+  margin-left: 8px;
+}
 /* Секция  Список проектов */
-.project h3 {
+
+.container .portfoleo-project-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+  padding-top: 50px;
+}
+.container .portfoleo-project-list-item {
+  width: calc(100% / 3 - 30px);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.portfoleo-project-wapper {
+  display: block;
+  /* flex-direction: column; */
+  border: 1px solid #eeeeee;
+  border-top: none;
+  padding: 20px 24px;
+}
+
+.portfoleo-project-wapper h3 {
   font-weight: bold;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+  margin-bottom: 10px;
 }
-.project p {
+.portfoleo-project p {
   font-size: 16px;
   line-height: 1.87;
+  margin: 10px auto;
 }
 
 /* ================================================ */
@@ -296,12 +350,15 @@ body {
   background-color: var(--btn-hover-color);
 }
 
-.filters .button {
+.portfoleo-filters-list-item .portfoleo-button {
+  border: none;
   color: var(title-text-color);
   background-color: var(second-background-colorolor);
+  border-radius: 4px;
+  padding: 6px 22px;
 }
-.filters .button:hover,
-.filters .button:focus {
+.portfoleo-filters-list-item .portfoleo-button:hover,
+.portfoleo-filters-list-item .portfoleo-button:focus {
   color: var(--primary-section-text-color);
   background-color: var(--accent-color);
 }
