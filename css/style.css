@@ -12,8 +12,8 @@
   --footer-section-background-color: #2f303a;
   --title-text-color: #212121;
   --accent-color: #2196f3;
-  --primary-background-color: #e5e5e5;
-  --header-background-color: #ffffff;
+  --primary-background-color: #ffffff;
+  /* --header-background-color: #ffffff; */
   --second-background-color: #f5f4fa;
   --logo-header-color: #000000;
   --logo-footer-color: #ffffff;
@@ -31,6 +31,7 @@ h6,
 p {
   margin: 0;
 }
+
 /* Убираем маркеры из списков */
 ul {
   list-style: none;
@@ -48,10 +49,21 @@ body {
   /* Основной цвет текста #757575 */
   color: var(--primary-text-color);
 
-  /* Основной цвет фона #e5e5e5 */
-  background-color: var(--primary-background-color);
+  /* Основной цвет фона #ffffff */
+  background-color: var(---primary-background-color);
 }
 
+/* ==========Прячем ненужные заголовки */
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
 /* ===Класс КОНТЕЙНЕР */
 .container {
   width: 1200px;
@@ -64,11 +76,28 @@ body {
 .site-nav,
 .communication-header {
   display: flex;
+  align-items: center;
 }
 
 .page-header {
   justify-content: space-between;
   align-items: center;
+  margin: 24px auto;
+}
+.site-nav {
+}
+/* Задаем стиль для h2 */
+.container h2 {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+}
+
+/* ===Класс Секция */
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 /* =======================ШАПКА САЙТА========================= */
 /* Шапка сайта */
@@ -123,7 +152,9 @@ body {
 /* Основная секця */
 .hero {
   background-color: var(--primary-section-background-color);
+  padding: 200px 0;
 }
+
 .hero-title {
   font-weight: 900;
   font-size: 44px;
@@ -136,6 +167,7 @@ body {
   margin: 0 auto;
   margin-bottom: 30px;
 }
+
 /* Свойство Кнопки (button)смотри в разделе "Кнопкм" */
 
 /* Общее для секций (шрифты h2 h3) */
@@ -146,52 +178,75 @@ body {
   color: var(--title-text-color); /* Вторичный цвет текста #212121 */
 }
 /* Секция  Особенности */
-.feature .section-list {
+
+.container .feature-list {
   font-weight: bold;
   font-size: 14px;
   line-height: 1.14;
-  text-transform: uppercase;
-}
-/* .feature  */
-.container > ul {
-  width: 1200px;
-  margin: 0 auto;
-  padding: 0;
   display: flex;
-  justify-content: space-between;
+  margin-left: -30px;
+  margin-top: -30px;
 }
+.container .feature-list-item {
+  width: calc(100% / 4 - 30px);
+  margin-left: 30px;
+  margin-top: 30px;
 }
 .feature p {
   font-size: 14px;
   line-height: 1.71;
+  padding-top: 10px;
 }
 /* Секция  Чем мы занимаемся */
-.business h2 {
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
+.container .business-list {
+  display: flex;
+  margin-left: -30px;
+  margin-top: -30px;
+  padding-top: 62px;
+  padding-bottom: 50px;
 }
+.container .business-list-item {
+  width: calc(100% / 3 - 30px);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
 /* Секция  Наша команда */
 .command {
   background-color: var(--second-background-color);
 }
+/* .command img {
+  margin-bottom: 30px;
+} */
+
+.container .command-list {
+  display: flex;
+  margin-left: -30px;
+  margin-top: -30px;
+  border-bottom: 2px solid #a5a5a9;
+  border-radius: 5px;
+}
+.container .command-list-item {
+  width: calc(100% / 4 - 30px);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
 .command h2 {
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
+  margin-bottom: 50px;
 }
 .command h3 {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
+  margin-bottom: 10px;
 }
 .command p {
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
+  margin-bottom: 30px;
 }
 /* ================================================ */
 /* ===================ПОРТФОЛИО============================= */
@@ -232,12 +287,15 @@ body {
   color: var(--color-text-btn);
   background-color: var(--accent-color);
   margin: 0 auto;
+  display: block;
+  border-radius: 5px;
 }
-.primary > .button:hover,
-.primary > .button:focus {
-  color: var(--title-text-color);
-  background-color: var(--second-background-color);
+.hero-btn:hover,
+.hero-btn:focus {
+  color: var(--color-text-btn);
+  background-color: var(--btn-hover-color);
 }
+
 .filters .button {
   color: var(title-text-color);
   background-color: var(second-background-colorolor);
@@ -255,7 +313,13 @@ footer {
   color: var(--logo-footer-color);
   background-color: var(--footer-section-background-color);
 }
-
+footer .container {
+  display: block;
+  padding: 60px 0;
+}
+footer p {
+  padding-bottom: 10px;
+}
 /* Логотип в подвале */
 .logo-footer {
   font-family: 'Raleway', sans-serif;
@@ -264,6 +328,7 @@ footer {
   letter-spacing: 0.03em;
   text-decoration: none;
   color: var(--logo-footer-color);
+  -bottom: 20px;
 }
 .logo-footer > span {
   color: var(--accent-color);
@@ -272,6 +337,7 @@ footer {
   font-size: 14px;
   font-style: normal;
   line-height: 1.71;
+  padding-top: 20px;
 }
 /* Коммуникация (подвал) */
 .communication-footer .link {
@@ -279,6 +345,7 @@ footer {
   line-height: 1.71;
   color: var(--communication-footer-color);
   text-decoration: none;
+  /* display: flex; */
 }
 .communication-footer .link:hover,
 .communication-footer .link:focus {
