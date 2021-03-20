@@ -146,7 +146,7 @@ body {
   color: var(--accent-color); /* Синий цвет #2196F3 */
 }
 /* Активная страница */
-.site-nav .link.current {
+.site-nav .link .current {
   color: var(--accent-color);
 }
 /* Коммуникация (шапка) */
@@ -362,6 +362,7 @@ body {
 .portfoleo-filters-list-item .portfoleo-button:focus {
   color: var(--primary-section-text-color);
   background-color: var(--accent-color);
+  cursor: pointer;
 }
 /* ================================================ */
 /* ===================ПОДВАЛ САЙТА============================= */
@@ -403,7 +404,6 @@ footer p {
   line-height: 1.71;
   color: var(--communication-footer-color);
   text-decoration: none;
-  /* display: flex; */
 }
 .communication-footer .link:hover,
 .communication-footer .link:focus {
