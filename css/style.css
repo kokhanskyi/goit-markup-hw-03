@@ -244,6 +244,7 @@ body {
   padding-top: 30px;
   border-bottom: 2px solid #a5a5a9;
   border-radius: 5px;
+  background-color: var(--primary-background-color);
 }
 .container .command-list-item {
   width: calc(100% / 4 - 30px);
